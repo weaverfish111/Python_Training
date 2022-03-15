@@ -18,7 +18,7 @@ ten = 0
 five = 0 
 one = 0
 all = 0
-while int_num >= 0:
+while int_num > 0:
     for coin in deno_list:
         coin_count = int_num // coin #finding how many demonination go into input
         remainder = int_num % coin #finding remainder after highest denomination has been subtracted
@@ -35,10 +35,11 @@ while int_num >= 0:
         if coin == 1:
             # print(f"The current 0.01 is {one + coin_count}")
             all += one + coin_count
-        
+        if coin == 0:
+            int_num = 0
+
+print (int(all))
         ## testing the variables for each iteration ## 
         # print(f"The current denomination is {coin}")
         # print(f"The number of times denomination goes into num is {coin_count}")
         # print(f"The remaining amount left over is {remainder}")
-    break
-print (int(all))
